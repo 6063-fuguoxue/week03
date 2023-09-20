@@ -1,6 +1,10 @@
-let xpos = 100;
 let width = 600;
 let height = 600;
+
+let eDiam = 50;
+let maxDiam = 50;
+let minDiam = 5;
+let step = 8;
 
 function setup() {
     createCanvas(width, height);
@@ -8,36 +12,14 @@ function setup() {
 
 function draw() {
     background(125,125,200);
-    strokeWeight(0);
+    strokeWeight(1);
+    fill("pink");
 
-    // rect(xpos, 10,30,30);
-    // rect(xpos, 50,30,30);
-    // rect(xpos, 90,30,30);
-
-    // rect(mouseX, mouseY, 30, 30);
-
-    // print in p5.js
-    // print(mouseX, mouseY);
-    // print in JS
-    // console.log(mouseX, mouseY);
-
-    if (mouseX < width/2){
-        
-        if (mouseY < height/2) {
-            fill(255, 125,125);
-        }
-        else {
-            fill(255, 255,125);
-        }
-    } 
-    else {
-        if (mouseY < height/2) {
-            fill(125, 255,125);
-        }
-        else {
-            fill(125, 255, 255);
+    for (let i=0; i<width/eDiam; i++) {
+        for (j=0; j<height/eDiam; j++){
+            for (let dim = maxDiam; dim > minDiam; dim-=step) {
+                ellipse(eDiam/2 + eDiam*i, eDiam/2 + eDiam*j, dim);
+            }            
         }
     }
-    
-    rect(mouseX, mouseY, 30, 30);
 }
