@@ -22,9 +22,22 @@ function draw() {
     // console.log(mouseX, mouseY);
 
     if (mouseX < width/2){
-        fill(255, 125,125);
-    } else {
-        fill(125,255,125);
+        
+        if (mouseY < height/2) {
+            fill(255, 125,125);
+        }
+        else {
+            fill(255, 255,125);
+        }
+    } 
+    else {
+        if (mouseY < height/2) {
+            fill(125, 255,125);
+        }
+        else {
+            fill(125, 255, 255);
+        }
     }
+    
     rect(mouseX, mouseY, 30, 30);
 }
