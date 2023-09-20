@@ -1,9 +1,10 @@
-let xpos = 150;
-let ypos = 200;
 let width = 600;
 let height = 600;
-let rectWidth = 300;
-let rectHeight = 200;
+
+let eDiam = 50;
+let maxDiam = 50;
+let minDiam = 5;
+let step = 8;
 
 function setup() {
     createCanvas(width, height);
@@ -11,12 +12,14 @@ function setup() {
 
 function draw() {
     background(125,125,200);
-    strokeWeight(0);
+    strokeWeight(1);
+    fill("pink");
 
-    if (mouseX > xpos && mouseX < (xpos + rectWidth) && mouseY > ypos && mouseY < (ypos + rectHeight)) {
-        fill(255,255,125);
+    for (let i=0; i<width/eDiam; i++) {
+        for (j=0; j<height/eDiam; j++){
+            for (let dim = maxDiam; dim > minDiam; dim-=step) {
+                ellipse(eDiam/2 + eDiam*i, eDiam/2 + eDiam*j, dim);
+            }            
+        }
     }
-    else {fill(255);}
-    
-    rect(xpos, ypos, rectWidth, rectHeight);
 }
