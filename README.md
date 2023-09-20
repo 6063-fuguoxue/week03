@@ -1,6 +1,8 @@
-# p5.js Template
+# Week 03 exercises
 
-This is a README file that can be used to describe and document your assignment.
+This is a README file for week 03 exercises.
+
+![Week 03 Image Test](./img/Cometale.png)
 
 Markdown Cheatsheet (from [https://www.markdownguide.org/cheat-sheet/](https://www.markdownguide.org/cheat-sheet/)):
 
